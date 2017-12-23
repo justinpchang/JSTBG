@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style> ::selection { background: white; /* WebKit/Blink Browsers */ } </style>
   <title>JS Text Game</title>
+  <style> ::selection { background: white; /* WebKit/Blink Browsers */ } </style>
+  <link rel="stylesheet" type="text/css" href="css/style.css"></link>
   <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-  <link rel="stylesheet" type="text/css" href="style.css"></link>
-  <script src="jquery-1.11.3.min.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/vars.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/styler.js"></script>
+  <script src="js/game.js"></script>
 </head>
 <body onload="startTime()" onresize="resize()">
-  <script src="vars.js"></script>
   <div id="menu">
     Macros will go here!
     <span id="clock"></span>
-    <script src="clock.js"></script>
   </div>
   <hr>
   <div id="mainContainer">
-    <input type="text" name="input" id="inputBox" />
+    <input type="text" name="input" id="inputBox" autofocus />
     <button type="button" name="inputSubmit" id="inputSubmit">Submit</button>
     <div id="feedDiv">
       <p id="feed"></p>
     </div>
   </div>
-  <script src="styler.js"></script>
-  <script src="game.js"></script>
   <script>if (window.module) module = window.module;</script>
 </body>
 </html>
