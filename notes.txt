@@ -1,0 +1,30 @@
+Maps
+  There will be a button that brings up a popup of the map in another window.
+  The map will be defined as a graph with locations as vertices with and edge between all adjacent locations.
+  The map can be changed (different areas of access at different times)
+  The map graph will be stored in a text file in the format:
+    location1:location2,location3;
+    location2:location1;
+    location3:location1;
+
+Commands
+  The `go` command will check if the target location is adjacent to current location.
+  The `describe` command will give a description of the chosen object if one exists.
+    A text dictionary will also be available giving descriptions in the format:
+      location1:This is location 1.;
+      location2:This is location 2.;
+      location3:This is location 3.;
+  The `list` command will print out a list of all objects at the current location.
+    This is done by having a dictionary of locations and objects.
+    This dictionary will be populated at the start of the game.
+  The `?` command will show all usable functions of the given item.
+
+Objects
+  All objects will fall under the set categories.
+  Categories will have set commands that are valid to do to the object.
+  Specific objects will also have individual commands.
+  Each object will have a list of all functions of itself (used by `?` command).
+
+Non-player characters
+  NPCs will not be children of objects, but their own type.
+  NPCs will have a location attribute and a dictionary of responses.
