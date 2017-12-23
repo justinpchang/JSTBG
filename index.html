@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style> ::selection { background: white; /* WebKit/Blink Browsers */ } </style>
   <title>JS Text Game</title>
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
   <link rel="stylesheet" type="text/css" href="style.css"></link>
   <script src="jquery-1.11.3.min.js"></script>
 </head>
-<body onload="startTime()">
+<body onload="startTime()" onresize="resize()">
   <script src="vars.js"></script>
   <div id="menu">
     Macros will go here!
@@ -22,5 +24,6 @@
   </div>
   <script src="styler.js"></script>
   <script src="game.js"></script>
+  <script>if (window.module) module = window.module;</script>
 </body>
 </html>
