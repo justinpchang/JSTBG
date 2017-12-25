@@ -6,9 +6,25 @@ commands['hello'] = function(args) {
 }
 
 commands['test'] = function(args) {
-  return player.getLoc().getAdjacent()[0];
+  return player.getLoc().getAdjacent().join(',');
 };
 
 commands['?'] = function(args) {
-  return Object.keys(this).join(' ');
+  return Object.keys(this).join(' | ');
+};
+
+commands['go'] = function(args) {
+  // return possible locations if args empty
+  if(args.join() == '') {
+    return player.getLoc().getAdjacent().join(' | ');
+  }
+
+  var newLoc = new Location(args.join(' '));
+
+  if(player.getLoc().isAdjacent(newLoc)) {
+    player.setLoc(newLoc);
+    return 'Travelling to ' + newLoc.getName() + '...';
+  } else {
+    return args[0] + ' is not reachable from your current location.';
+  }
 };

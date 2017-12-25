@@ -18,6 +18,7 @@ $(document).ready(function() {
   });
   var updateFeed = function() {
     $("#feed").html(text);
+    $("#stats").html('HP: ' + player.getHP() + ' | Location: ' + player.getLoc().getName());
   };
 
   setInterval(updateFeed, 100);

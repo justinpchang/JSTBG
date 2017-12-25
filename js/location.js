@@ -21,10 +21,11 @@ Location.prototype.getAdjacent = function() {
   return this.adjacent;
 }
 
-Location.prototype.isAdjacent = function(name) {
-  return this.adjacent.indexOf(name);
-}
-
-Location.prototype.equals = function(loc) {
-  return this.name == loc.name && arraysEqual(this.adjacent, loc.adjacent);
+Location.prototype.isAdjacent = function(loc) {
+  for(var i = 0; i < this.adjacent.length; i++) {
+    if(this.adjacent[i] == loc.getName()) {
+      return true;
+    }
+  }
+  return false;
 }

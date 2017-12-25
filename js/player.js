@@ -5,7 +5,6 @@ function Player(loc, hp, items) {
 }
 
 Player.prototype.getLoc = function() {
-  console.log("hello");
   return this.loc;
 }
 
