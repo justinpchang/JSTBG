@@ -24,36 +24,15 @@ $(document).ready(function() {
 });
 
 function respondTo(command) {
-  var returnStr = "";
-
   // parse command into words
   input = command.split(" ");
   for(i = 0; i < input.length; i++) {
     input[i] = input[i].toLowerCase();
   }
 
-  // check words against dictionary
-  for(i = 0; i < input.length; i++) {
-    for(j = 0; j < dictionary.length; j++) {
-      if(input[i] == dictionary[j]) {
-        break;
-      }
-      else if(j == dictionary.length - 1 && dictionary.length > 1) {
-        invalid = true;
-        break;
-      }
-    }
-    if(invalid) {
-      invalid = false;
-      return "I do not understand that.";
-      break;
-    }
+  // check to make sure word exists
+  if(commands.hasOwnProperty(input[0])) {
+    return commands[input[0]](input.slice(1));
   }
-
-  // test word
-  if(input[0] == "hello") {
-    return player.getLoc().getAdjacent()[0];
-  }
-
-  return returnStr;
+  return "I do not understand that.";
 }
