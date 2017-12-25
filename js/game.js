@@ -19,6 +19,7 @@ $(document).ready(function() {
   var updateFeed = function() {
     $("#feed").html(text);
   };
+
   setInterval(updateFeed, 100);
 });
 
@@ -51,64 +52,8 @@ function respondTo(command) {
 
   // test word
   if(input[0] == "hello") {
-    return "Hello to you, too.";
-  }
-
-  // directional words {go north/south/east/west}
-  if(input[0] == "go") {
-    switch(input[1]) {
-      case "north":
-        console.log("GOING NORTH");
-        go("north");
-        break;
-      case "south":
-        go("south");
-        break;
-      case "east":
-        go("east");
-        break;
-      case "west":
-        go("west");
-        break;
-      default:
-        return "That is not a valid direction.";
-    }
-    if(invalid) {
-      invalid = false;
-      return "There is no region in that direction";
-    }
-    return "You went " + input[1] + " and are now in region \"" + map[y][x] + "\".";
+    return player.getLoc().getAdjacent()[0];
   }
 
   return returnStr;
-}
-
-function go(dir) {
-  switch(dir) {
-    case "north":
-      if(y - 1 > -1)
-        y -= 1;
-      else
-        invalid = true;
-      break;
-    case "south":
-      if(y + 1 < map.length)
-        y += 1;
-      else
-        invalid = true;
-      break;
-    case "east":
-      if(x + 1 < map[y].length)
-        x += 1;
-      else
-        invalid = true;
-      break;
-    case "west":
-      if(x - 1 > -1)
-        x -= 1;
-      else
-        invalid = true;
-      break;
-  }
-  return;
 }

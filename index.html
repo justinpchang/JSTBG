@@ -5,13 +5,20 @@
   <style> ::selection { background: white; /* WebKit/Blink Browsers */ } </style>
   <link rel="stylesheet" type="text/css" href="css/style.css"></link>
   <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
   <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/helpers.js"></script>
+
+  <script src="js/player.js"></script>
+  <script src="js/location.js"></script>
+
   <script src="js/vars.js"></script>
   <script src="js/clock.js"></script>
-  <script src="js/styler.js"></script>
   <script src="js/game.js"></script>
+  <script src="js/styler.js"></script>
+
 </head>
-<body onload="startTime()" onresize="resize()">
+<body onload="startTime()">
   <div id="menu">
     Macros will go here!
     <span id="clock"></span>
