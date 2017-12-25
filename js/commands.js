@@ -8,3 +8,7 @@ commands['hello'] = function(args) {
 commands['test'] = function(args) {
   return player.getLoc().getAdjacent()[0];
 };
+
+commands['?'] = function(args) {
+  return Object.keys(this).join(' ');
+};
