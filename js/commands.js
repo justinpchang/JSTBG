@@ -5,10 +5,6 @@ commands['hello'] = function(args) {
   return 'Hello there!';
 }
 
-commands['test'] = function(args) {
-  return player.getLoc().getAdjacent().join(',');
-};
-
 commands['?'] = function(args) {
   return Object.keys(this).join(' | ');
 };
@@ -27,4 +23,8 @@ commands['go'] = function(args) {
   } else {
     return args[0] + ' is not reachable from your current location.';
   }
+};
+
+commands['list'] = function(args) {
+  return player.getLoc().getAdjacent().join(',');
 };
