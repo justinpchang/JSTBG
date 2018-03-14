@@ -1,5 +1,14 @@
 {
-  "name"    : "JSTBG",
-  "version" : "0.1.0",
-  "main"    : "main.js"
+  "name": "JSTBG",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "npm": "^5.7.1"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^1.8.3"
+  }
 }

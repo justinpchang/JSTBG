@@ -1,3 +1,4 @@
 location1:location2,location3
-location2:location1
-location3:location1
+location2:location1,location4
+location3:location1,location4
+location4:location2,location3
